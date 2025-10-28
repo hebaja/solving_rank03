@@ -73,3 +73,23 @@ int	check_diagonal_forward_down(char *arr, int pos, int N)
 	}
 	return (1);
 }
+
+int	check_vertical(char *arr, int pos, int N)
+{
+	int		i;
+	char	fixed;
+
+	i = -1;
+	fixed = arr[pos];
+	while (++i < N)
+	{
+		if (fixed == arr[pos + 1])
+			return 0;
+	}
+	while (pos--)
+	{
+		if (fixed == arr[pos])
+			return (0);
+	}
+	return (1);
+}
