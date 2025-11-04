@@ -77,6 +77,29 @@ int	check_diagonal_forward_down(char *arr, int pos, int N)
 int	check_vertical(char *arr, int pos, int N)
 {
 	int		i;
+	int		j;
+	char	fixed;
+
+	i = 0;
+	j = -1;
+	fixed = arr[0];
+	while (++j <= pos)
+	{
+		i = j + 1;
+		while (++i <= pos)
+		{
+			if (fixed == arr[i])
+				return 0;
+		}
+		fixed = arr[j];
+	}
+	return (1);
+}
+
+/*
+int	check_vertical(char *arr, int pos, int N)
+{
+	int		i;
 	char	fixed;
 
 	i = -1;
@@ -93,3 +116,4 @@ int	check_vertical(char *arr, int pos, int N)
 	}
 	return (1);
 }
+*/
